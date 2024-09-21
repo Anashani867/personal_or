@@ -355,7 +355,6 @@ a {
   position: relative;
 }
 #services1 .part_1 h2:after {
-  content: "- what i provide -";
   font-size: 15px;
   width: 100%;
   height: 10%;
