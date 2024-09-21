@@ -467,40 +467,17 @@ a {
   }
 }
 
-#skills .part_2 .card .button {
-  margin-top: 1rem;
-}
-#skills .part_2 .card .btn {
-  background-color: var(--body-bg-2);
-}
-#skills .part_2 .card .btn:hover {
-  background-color: var(--theme-color-light);
-  color: black;
-}
 
-#skills .part_3 {
-  width: 930px;
-  margin-top: 3rem;
-  background-color: #222;
-  padding: 1rem;
-  cursor: pointer;
-  transition: all linear 0.5s;
-}
-#skills .part_3:hover {
-  box-shadow: var(--box-shadow);
-}
+
 
 
 @keyframes animate {
-  17% {
-    border-bottom-right-radius: 3px;
-  }
+
   25% {
     transform: translateY(9px) rotate(22.5deg);
   }
   50% {
     transform: translateY(18px) scale(1, 0.9) rotate(45deg);
-    border-bottom-right-radius: 40px;
   }
   75% {
     transform: translateY(9px) rotate(67.5deg);
