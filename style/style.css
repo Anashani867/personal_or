@@ -227,7 +227,7 @@ a {
 #about .part_2 .image_part img {
   width: 100%;
   height: 100%;
-  filter: grayscale(1);
+  filter: grayscale(1);/*الصورة الرمادي*/
   cursor: pointer;
   transition: all 0.5s linear;/*تأثيرات انتقال سلسة عند تغيير الخصائص*/
 }
@@ -307,7 +307,7 @@ a {
   padding: 1rem;
   text-align: center;
   border-radius: 6px;
-  cursor: pointer;
+  cursor: pointer;/*كل المؤشر*/
   transition: all linear 0.5s;
 }
 #services .part_2 .box:hover {
@@ -331,7 +331,7 @@ a {
 }
 #services .part_2 .box:hover h4,
 #services .part_2 .box:hover p {
-  transform: scale(1.05);
+  transform: scale(1.05);/*زيادة حجم بمدتر 5بالمية*/
 }
 #services .part_2 .box:hover h4 {
   color: black;
@@ -339,6 +339,186 @@ a {
 
 
 
+
+
+
+
+/* Skills Part */
+#skills {
+  padding: 5rem 2rem;
+  background-color: var(--body-bg-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+#skills .part_1 h2 {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+}
+#skills .part_1 h2:after {
+  content: "- what i know -";
+  font-size: 15px;
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  top: 80%;
+  left: 0;
+  color: var(--theme-color-dark);
+}
+
+#skills .part_2 {
+  width: 930px;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  grid-gap: 2rem;
+}
+#skills .part_2 .info {
+  flex-basis: 400px;
+  width: 700px;
+  height: 300px;
+  position: relative;
+}
+#skills .part_2 .info h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+#skills .part_2 .info p {
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: 300;
+  text-align: justify;
+  line-height: 2rem;/*المسافة بين الكلمات*/
+}
+#skills .part_2 .card {
+  flex-basis: 420px;
+  width: 300px;
+  position: relative;
+}
+
+#skills .part_2 .skills {
+  background-color: #222;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all linear 0.5s;
+}
+.skills:hover {
+  box-shadow: var(--box-shadow);
+}
+.skill-name:nth-child(1) {
+  margin-top: 0px;
+}
+.skill-name {
+  margin-top: 2rem;
+  font-weight: bold;
+}
+.skill-bar {
+  height: 5px;/*ارتفاع الخط*/
+  border-radius: 4px;
+  background: #282828;
+}
+.skill-per {
+  height: 5px;
+  border-radius: 4px;
+  background: var(--theme-color-light);
+  position: relative;
+  animation: skillbar 3.5s 1;/* @keyframes مدة الرسوم المتحركة.  عدد مرات تشغيل الرسوم المتحركة.*/
+}
+
+.skill-per:before {
+  content: attr(per);/*لإظهار القيمة الموجودة*/
+  position: absolute;
+  padding: 4px 6px;
+  background: var(--text-white);/*لون الخلفية تاعت الارقام*/
+  border-radius: 4px;
+  font-size: 12px;
+  color: var(--body-bg-1);
+  top: -35px;
+  right: 0;/*وضع العنصر أفقيًا من الجانب الأيمن. قيمة 0 تعني أن العنصر سيكون ملتصقًا بالجانب الأيمن من الحاوية أو العنصر الأب*/
+  transform: translateX(50%);/*هذه الخاصية تستخدم لتحويل العنصر. في هذه الحالة، translateX(50%) تعني أن العنصر سيتحرك أفقيًا بمقدار 50% من عرضه الأصلي إلى اليمين*/
+}
+.skill-per:after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--text-white);
+  border-radius: 2px;
+  top: -15px;
+  right: 0;
+  transform: translateX(50%) rotate(45deg);/*المظهر: العنصر سيكون مائلًا بزاوية 45 درجة ومتحركًا إلى اليمين بمقدار 50% من عرضه.
+  النقطة المحورية: ستظل النقطة المحورية في مركز العنصر، مما يعني أن العنصر سيتحرك ويدور بشكل متناسق.*/
+}
+@keyframes skillbar {/*from و to:
+  from: تمثل الحالة الابتدائية للعنصر في بداية الرسوم المتحركة.
+  to: تمثل الحالة النهائية للعنصر عند انتهاء الرسوم المتحركة.*/
+  from {
+    width: 0;
+    background: blue;
+  }
+  to {
+    width: 100%;
+    background: var(--theme-color-light);
+  }
+}
+
+#skills .part_2 .card .button {
+  margin-top: 1rem;
+}
+#skills .part_2 .card .btn {
+  background-color: var(--body-bg-2);
+}
+#skills .part_2 .card .btn:hover {
+  background-color: var(--theme-color-light);
+  color: black;
+}
+
+#skills .part_3 {
+  width: 930px;
+  margin-top: 3rem;
+  background-color: #222;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all linear 0.5s;
+}
+#skills .part_3:hover {
+  box-shadow: var(--box-shadow);
+}
+
+
+@keyframes animate {
+  17% {
+    border-bottom-right-radius: 3px;
+  }
+  25% {
+    transform: translateY(9px) rotate(22.5deg);
+  }
+  50% {
+    transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+    border-bottom-right-radius: 40px;
+  }
+  75% {
+    transform: translateY(9px) rotate(67.5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(90deg);
+  }
+}
+
+@keyframes shadow {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1);
+  }
+}
 
 
 /*project Part */
@@ -407,243 +587,6 @@ a {
   color: black;
 }
 
-
-/* Skills Part */
-#skills {
-  padding: 5rem 2rem;
-  background-color: var(--body-bg-2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-#skills .part_1 h2 {
-  font-size: 30px;
-  font-weight: 700;
-  text-align: center;
-  position: relative;
-}
-#skills .part_1 h2:after {
-  content: "- what i know -";
-  font-size: 15px;
-  width: 100%;
-  height: 10%;
-  position: absolute;
-  top: 80%;
-  left: 0;
-  color: var(--theme-color-dark);
-}
-
-#skills .part_2 {
-  width: 930px;
-  margin-top: 3rem;
-  display: flex;
-  justify-content: center;
-  grid-gap: 2rem;
-}
-#skills .part_2 .info {
-  flex-basis: 400px;
-  width: 700px;
-  height: 300px;
-  position: relative;
-}
-#skills .part_2 .info h3 {
-  font-size: 18px;
-  font-weight: 700;
-}
-#skills .part_2 .info p {
-  margin-top: 5px;
-  font-size: 15px;
-  font-weight: 300;
-  text-align: justify;
-  line-height: 2rem;
-}
-#skills .part_2 .card {
-  flex-basis: 420px;
-  width: 300px;
-  position: relative;
-}
-
-#skills .part_2 .skills {
-  background-color: #222;
-  padding: 1rem;
-  cursor: pointer;
-  transition: all linear 0.5s;
-}
-.skills:hover {
-  box-shadow: var(--box-shadow);
-}
-.skill-name:nth-child(1) {
-  margin-top: 0px;
-}
-.skill-name {
-  margin-top: 2rem;
-  font-weight: bold;
-}
-.skill-bar {
-  height: 5px;
-  border-radius: 4px;
-  background: #282828;
-}
-.skill-per {
-  height: 5px;
-  border-radius: 4px;
-  background: var(--theme-color-light);
-  position: relative;
-  animation: skillbar 3.5s 1;
-}
-
-.skill-per:before {
-  content: attr(per);
-  position: absolute;
-  padding: 4px 6px;
-  background: var(--text-white);
-  border-radius: 4px;
-  font-size: 12px;
-  color: var(--body-bg-1);
-  top: -35px;
-  right: 0;
-  transform: translateX(50%);
-}
-.skill-per:after {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: var(--text-white);
-  border-radius: 2px;
-  top: -15px;
-  right: 0;
-  transform: translateX(50%) rotate(45deg);
-}
-@keyframes skillbar {
-  from {
-    width: 0;
-    background: blue;
-  }
-  to {
-    width: 100%;
-    background: var(--theme-color-light);
-  }
-}
-
-#skills .part_2 .card .button {
-  margin-top: 1rem;
-}
-#skills .part_2 .card .btn {
-  background-color: var(--body-bg-2);
-}
-#skills .part_2 .card .btn:hover {
-  background-color: var(--theme-color-light);
-  color: black;
-}
-
-#skills .part_3 {
-  width: 930px;
-  margin-top: 3rem;
-  background-color: #222;
-  padding: 1rem;
-  cursor: pointer;
-  transition: all linear 0.5s;
-}
-#skills .part_3:hover {
-  box-shadow: var(--box-shadow);
-}
-
-
-@keyframes animate {
-  17% {
-    border-bottom-right-radius: 3px;
-  }
-  25% {
-    transform: translateY(9px) rotate(22.5deg);
-  }
-  50% {
-    transform: translateY(18px) scale(1, 0.9) rotate(45deg);
-    border-bottom-right-radius: 40px;
-  }
-  75% {
-    transform: translateY(9px) rotate(67.5deg);
-  }
-  100% {
-    transform: translateY(0) rotate(90deg);
-  }
-}
-
-@keyframes shadow {
-  0%,
-  100% {
-    transform: scale(1, 1);
-  }
-  50% {
-    transform: scale(1.2, 1);
-  }
-}
-
-#projects .part_2 .container {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 2rem;
-  height: 600px;
-  overflow-y: auto;
-}
-#projects .part_2 .container .p_cards {
-  width: 250px;
-  height: 500px;
-  background: #222;
-  color: var(--text-white);
-  text-align: center;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all linear 0.5s;
-}
-#projects .part_2 .container .p_cards .info p {
-  text-align: left;
-}
-#projects .part_2 .container .p_cards:hover {
-  box-shadow: var(--box-shadow);
-}
-#projects .part_2 .container .p_cards .p_image {
-  background: rgba(255, 255, 255, 0.6);
-  width: 100%;
-  height: 200px;
-  border-radius: 6px 6px 0px 0px;
-  position: relative;
-  overflow: hidden;
-}
-#projects .part_2 .container .p_cards .p_image img {
-  border-radius: 6px 6px 0px 0px;
-  transition: all 0.5s linear;
-}
-#projects .part_2 .container .p_cards .p_image img:hover {
-  transform: scale(1.2);
-}
-#projects .part_2 .container .p_cards .info {
-  padding: 1rem 1rem 5rem 1rem;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-#projects .part_2 .container .p_cards .info h4 {
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--theme-color-dark);
-}
-#projects .part_2 .container .p_cards .info p {
-  margin-top: 10px;
-  font-size: 14px;
-  font-weight: 300;
-  transition: all 0.2s linear;
-}
-#projects .part_2 .container .p_cards .info .btn {
-  margin-top: 12px;
-  font-size: 14px;
-  font-weight: 300;
-  transition: all 0.2s linear;
-}
 
 /* Contact Part */
 #contact {
@@ -750,141 +693,7 @@ a {
   margin-top: 25px;
 }
 
-/*sidebar items*/
-#sidebar {
-  display: none;
-  position: fixed;
-  bottom: 10rem;
-  left: 0.1rem;
-  z-index: 99;
-  border: none;
-  outline: none;
-  padding: 15px;
-  border-radius: 10px;
-  font-size: 18px;
-  transition: 0.2s ease-in-out;
-}
-#sidebar_items {
-  position: relative;
-}
-#sidebar_items ul {
-  position: relative;
-}
-#sidebar_items ul li {
-  list-style-type: none;
-  display: block;
-  padding: 0.5rem 0rem;
-}
-#sidebar_items ul li a {
-  border-radius: 50%;
-  padding: 0.3rem 0.5rem;
-  position: relative;
-  transition: 0.2s linear;
-}
-#sidebar_items ul li:nth-child(1) a {
-  border-radius: 50%;
-  padding: 0.3rem 0.7rem;
-  position: relative;
-  transition: 0.2s linear;
-}
-#sidebar_items ul li:nth-child(1):after {
-  content: "";
-  position: absolute;
-  top: 4%;
-  left: 100%;
-  width: 100%;
-  height: 10%;
-  color: lime;
-  font-size: 15px;
-  transition: all 0.2s linear;
-}
-#sidebar_items ul li:nth-child(1):hover:after {
-  content: "Facebook";
-  left: 110%;
-}
-#sidebar_items ul li:nth-child(2):after {
-  content: "";
-  position: absolute;
-  top: 23%;
-  left: 100%;
-  width: 100%;
-  height: 10%;
-  color: lime;
-  font-size: 15px;
-  transition: all 0.2s linear;
-}
-#sidebar_items ul li:nth-child(2):hover:after {
-  content: "Instagram";
-  left: 110%;
-}
 
-#sidebar_items ul li:nth-child(3):after {
-  content: "";
-  position: absolute;
-  top: /*54%*/40;
-  left: 100%;
-  width: 100%;
-  height: 10%;
-  color: lime;
-  font-size: 15px;
-  transition: all 0.2s linear;
-}
-#sidebar_items ul li:nth-child(3):hover:after {
-  content: "Linkedin";
-  left: 110%;
-}
-#sidebar_items ul li:nth-child(4):after {
-  content: "";
-  position: absolute;
-  top: /*70%*/65%;
-  left: 100%;
-  width: 100%;
-  height: 10%;
-  color: lime;
-  font-size: 15px;
-  transition: all 0.2s linear;
-}
-#sidebar_items ul li:nth-child(4):hover:after {
-  content: "Github";
-  left: 110%;
-}
-#sidebar_items ul li:nth-child(5):after {
-  content: "";
-  position: absolute;
-  top: 85%;
-  left: 100%;
-  width: 100%;
-  height: 10%;
-  color: lime;
-  font-size: 15px;
-  transition: all 0.2s linear;
-}
-#sidebar_items ul li:nth-child(5):hover:after {
-  content: "WhatsApp";
-  left: 110%;
-}
-
-#sidebar_items ul li:nth-child(1) a {
-  border: none;
-  background-color: #1877f2;
-}
-#sidebar_items ul li:nth-child(2) a {
-  border: none;
-  background-color: #c32aa3;
-}
-
-#sidebar_items ul li:nth-child(3) a {
-  border: none;
-  background-color: #0a66c2;
-}
-#sidebar_items ul li:nth-child(4) a {
-  border: none;
-  background-color: #211f1f;
-}
-#sidebar_items ul li:nth-child(5) a {
-  border: none;
-  background-color: #25d366;
-}
 
 /*Footer section*/
 #footer {
